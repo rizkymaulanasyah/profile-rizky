@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Rizky</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #232526, #414345);
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigasi */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.9);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li { margin: 0 20px; }
+    nav ul li a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #00bcd4; }
+    nav ul li a.active { color: #00bcd4; }
+
+    /* Container */
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 120px auto 60px auto;
+      width: 90%;
+      max-width: 800px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .profile-image {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid #010305;
+      animation: fadeInDown 1s ease;
+    }
+
+    h1 { margin: 0; font-size: 2.5em; color: #333; animation: fadeInUp 1.5s ease; }
+    p { color: #666; margin: 10px 0 20px; animation: fadeInUp 2s ease; }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInUp 2.5s ease;
+    }
+    .links a {
+      background-color: #4e6074;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      margin: 5px 0;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .links a:hover { background-color: #252c35; transform: scale(1.05); }
+
+    section { margin-top: 60px; }
+    section h2 { font-size: 2em; margin-bottom: 20px; color: #333; }
+    .skills-container, .projects-container {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
+    }
+    .skill-card, .project-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      width: 220px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover, .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Tombol Back-to-Top */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;              /* awalnya transparan */
+      visibility: hidden;      /* supaya ga bisa diklik */
+      transform: translateY(20px); /* mulai agak turun */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1001;
+    }
+    #backToTop.show {
+      opacity: 1;              /* jadi terlihat */
+      visibility: visible;     /* bisa diklik */
+      transform: translateY(0); /* geser ke atas */
+    }
+    #backToTop:hover {
+      background: #0097a7;
+      transform: scale(1.1);
+    }
+
+    /* Animasi */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px);} to { opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: translateY(0);} }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasi -->
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <div class="container" id="home">
+    <img src="rizky.jpg" alt="Foto Profil" class="profile-image">
+    <h1>Rizky Maulana Syah</h1>
+    <p>Web Developer | Belajar & Berkarya</p>
+    <div class="links">
+      <a href="https://wa.me/6282181955484" target="_blank">WhatsApp</a> 
+      <a href="https://www.instagram.com/yk_zir_real112?igsh=OGg4bGhwczNydThp" target="_blank">Instagram</a>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="container" id="skills">
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card"><h3>HTML</h3><p>Mahir dalam struktur halaman web</p></div>
+        <div class="skill-card"><h3>CSS</h3><p>Styling responsif dan modern</p></div>
+        <div class="skill-card"><h3>JavaScript</h3><p>Interaktivitas website</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Projects -->
+  <div class="container" id="projects">
+    <section>
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project-card"><h3>Portofolio Website</h3><p>Website personal statis untuk menampilkan profil & skill.</p></div>
+        <div class="project-card"><h3>Kalkulator Web</h3><p>Aplikasi kalkulator sederhana berbasis HTML, CSS, dan JS.</p></div>
+        <div class="project-card"><h3>To-Do List App</h3><p>Aplikasi catatan tugas interaktif dengan JavaScript.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact -->
+  <div class="container" id="contact">
+    <section>
+      <h2>Contact</h2>
+      <p>Ingin berkolaborasi? Hubungi saya melalui email berikut:</p>
+      <p><strong>bgmaulana789@gmail.com</strong></p>
+    </section>
+  </div>
+
+  <!-- Tombol Back-to-Top -->
+  <button id="backToTop">↑</button>
+
+  <!-- Script -->
+  <script>
+    const sections = document.querySelectorAll("div.container");
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const backToTop = document.getElementById("backToTop");
+
+    // Highlight menu + tombol back-to-top
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+
+      // Tambahkan class .show biar animasi fade + slide
+      if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    // Klik tombol back-to-top
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
